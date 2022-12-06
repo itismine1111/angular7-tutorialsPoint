@@ -8,7 +8,7 @@ import { SqrtPipe } from './pipes/app.aqrt';
 import { ChangeTextDirective } from './directives/change-text.directive';
 import { ContactusComponent } from './MyComponents/contactus/contactus.component';
 import { MyserviceService } from './services/myservice.service';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({ 
@@ -21,7 +21,8 @@ import { MyserviceService } from './services/myservice.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [MyserviceService],
   bootstrap: [AppComponent]

@@ -19,6 +19,8 @@ export class HomeComponent {
   componentProperty: String | undefined;
   componentProperty2: String | undefined;
 
+  public personData = [];
+
   constructor(private myservice: MyserviceService){}
 
   ngOnInit(){
@@ -26,6 +28,12 @@ export class HomeComponent {
     this.myservice.serviceProperty = "Component created";
     this.componentProperty = this.myservice.serviceProperty;
     this.componentProperty2 = this.myservice.serviceProperty2;
+
+    // Populating the personData 
+    // this.myservice.getData().subscribe((data)=>{
+    //   this.personData = Array.from(Object.keys(data), k=>data[k]);
+    //   console.log(this.personData);
+    // })
   }
 
   buttonClickFunction(event: any) {
