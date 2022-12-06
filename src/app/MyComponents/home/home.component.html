@@ -1,0 +1,49 @@
+<div style="text-align: center">
+  <h2>{{ title }}</h2>
+  <h3>{{ 3749.34 | currency: "INR":true }}</h3>
+  <h3>{{ todayDate | date: "d/M/y" }}</h3>
+  <h3>{{ todayDate | date: "shortTime" }}</h3>
+  <h3>{{ 237483.23434 | number: "3.4-4" }}</h3>
+  <h3>{{ jsonVal | json }}</h3>
+  <h3>{{ 0.34 | percent }}</h3>
+  <h3>{{ months | slice: 2:6 }}</h3>
+  <h3>{{ 123 | sqrt }}</h3>
+
+  <div>
+    <strong>
+      <span appChangeText>{{ title }}</span>
+    </strong>
+    <br><br>
+  </div>
+
+  <div>
+    Months:
+    <select name="month" id="" (change)="monthsChangedFunction($event)">
+      <option *ngFor="let i of months">{{ i }}</option>
+    </select>
+  </div>
+  <br />
+
+  <div>
+    <span *ngIf="isActive; then condition1; else condition2"></span>
+    <ng-template #condition1>Conditon is valid from template</ng-template>
+    <ng-template #condition2>Condition is not valid from template</ng-template>
+  </div>
+  <br />
+
+  <button (click)="buttonClickFunction($event)">Toggle Active</button>
+
+  <br>
+  <hr>
+  <h4>Trying services</h4>
+  {{ todayDate | date}}
+
+<p>Home Component Property: {{ componentProperty }}</p>
+<p>Home Component Property 2: {{ componentProperty2 }}</p>
+<button (click)="changeServiceProperyButtonClick($event)">Change Service Property</button>
+
+
+
+
+
+</div>
